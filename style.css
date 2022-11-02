@@ -1,0 +1,123 @@
+*,*::before, *::after{
+    box-sizing: border-box;
+}
+
+*{
+    margin: 0;
+    text-decoration: none;
+    color: #000;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+:root{
+    --bgColor:rgb(220, 219, 219);
+    --interFaceColor:#fff;
+    --displayColor: rgb(246, 245, 245);
+    --buttonPnlBgColor:rgb(83, 123, 245);
+    --bookListBgColor:rgb(216, 241, 255);
+    --bRadius:1em;
+}
+
+
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--bgColor);
+    overflow: hidden;
+}
+
+.flexB{
+    display: flex;
+}
+
+img{
+    max-width: 100%;
+}
+
+.p2-1{
+    padding: 2em 1em;
+}
+
+.row + .row{
+    margin-top: 2rem;
+}
+
+.bookInterface{
+    position: relative;
+    background-color: var(--interFaceColor);
+    border-radius: var(--bRadius);
+    width: 80%;
+    max-width: 300px;
+    aspect-ratio: 1/2;
+    
+}
+
+.logo-and-Search{
+    justify-content: space-between;
+}
+
+.logo-and-Search #searchBook{
+    background-image: url("images/search.svg");
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: center right;
+    width: 15%;
+    border-radius: var(--bRadius);
+    border: none;
+}
+
+.logoHeading{
+    font-family: 'Sigmar One', cursive;
+}
+
+.display{
+    background-color:var(--displayColor);
+    aspect-ratio: 16/9;
+    transform: translateX(1rem);
+    border-top-left-radius: var(--bRadius);
+    border-bottom-left-radius: var(--bRadius)
+}
+
+ul.bookList{
+    background-color:var(--bookListBgColor);
+    min-height: 12rem;
+    border-radius: var(--bRadius);
+}
+
+.book{
+    justify-content: space-around;
+    background-color: var(--interFaceColor);
+    margin-right: .5rem;
+    min-height: 3.5rem;
+    border-top-right-radius: var(--bRadius);
+    border-bottom-right-radius: var(--bRadius);
+}
+
+.book + .book{
+    margin-top: 1rem;
+}
+
+
+.mainButtonPanel{
+    position: absolute;
+    inset: auto 0 0 0;
+    border-radius: var(--bRadius);
+    aspect-ratio: 4;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--buttonPnlBgColor);
+}
+
+
+.mainButtonPanel .btnImg {
+    width:1.8rem;
+}
+

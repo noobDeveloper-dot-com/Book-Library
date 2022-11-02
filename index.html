@@ -4,16 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
     <title>Book Library</title>
 </head>
 <body>
-   <div class="bookInterface">
-     <div class="logo-and-Search flexB">
-       <div class="logo" role="img"></div>
+   <div class="bookInterface p2-1">
+     <div class="logo-and-Search row flexB">
+       <div class="logo" role="img">
+        <img src="images\library Icon.svg" alt="Logo">
+       </div>
        <input type="text" name="searchBook" id="searchBook">
      </div>
 
-     <div class="display">
+     <div class="display row">
         <!-- <div class="bookImage"></div> -->
         <div class="bookInfo">
             <div class="bookName"></div>
@@ -23,11 +28,11 @@
      </div>
 
 
-      <ul class="bookList">
-        <li class="book">
+      <ul class="bookList row">
+        <li class="book flexB">
             <div class="bookInfo">
-               <div class="bookName"></div>
-               <div class="authorName"></div>
+               <div class="bookName">Harry Potter</div>
+               <div class="authorName">JK Rowling</div>
             </div>
 
             <div class="interactSection">
@@ -35,10 +40,10 @@
                 <a href="#" class="tickToggle">READ</a>
             </div>
         </li>
-        <li class="book">
+        <li class="book flexB">
             <div class="bookInfo">
-                <div class="bookName"></div>
-                <div class="authorName"></div>
+                <div class="bookName">Ben 10</div>
+                <div class="authorName">Man of Action</div>
              </div>
  
              <div class="interactSection">
@@ -49,11 +54,11 @@
       </ul>
 
 
-      <div class="mainButtonPanel">
-        <a href="#">Add Book</a>
-        <a href="#">Search</a>
-        <a href="#">List/GridView</a>
-        <a href="#">About</a>
+      <div class="mainButtonPanel flexB row">
+        <a href="#"><img class="btnImg" src="images\plus-circle.svg" alt=""></a>
+        <a href="#"><img class="btnImg" src="images\grid.svg" alt=""></a>
+        <a href="#"><img class="btnImg" src="images\moon.svg" alt=""></a>
+        <a href="#"><img class="btnImg" src="images\info.svg" alt=""></a>
       </div>
    </div> 
 </body>
