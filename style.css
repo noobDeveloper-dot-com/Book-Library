@@ -93,7 +93,7 @@ ul.bookList{
 }
 
 .book{
-    justify-content: space-around;
+    justify-content: space-between;
     background-color: var(--interFaceColor);
     margin-right: .5rem;
     min-height: 3.5rem;
@@ -105,6 +105,87 @@ ul.bookList{
     margin-top: 1rem;
 }
 
+.book .bookInfo{
+    width: 70%;
+}
+
+.deleteBook{
+    background-image: url("images/Trash.svg");
+}
+
+.formInputs .readToggle{
+    text-align: center;
+    background-color: greenyellow;
+}
+
+.deleteBook,
+.tickToggle{
+    display: inline-block;
+    width: 1.5rem;
+    min-height: 1.5rem;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+
+
+
+
+
+
+
+.addBookModal{
+    position: absolute;
+    inset: 0 0 auto 0;
+    background-color: var(--displayColor);
+    border-radius: var(--bRadius);
+    min-height: 50%;
+    z-index: 2;
+}
+
+.closeBtn{
+    position: absolute;
+    inset: 0 0 auto auto;
+}
+
+.formInputs{
+    flex-direction: column;
+}
+
+
+.addBookModal input{
+    margin-bottom: 1rem;
+    
+}
+
+.transparentCover{
+    position: absolute;
+    inset: 0;
+    background-color: #000;
+    opacity:30%;
+    z-index: 1;
+    border-radius: var(--bRadius);
+}
+
+.addBookModal,
+.transparentCover{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.addBookModal.active{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.transparentCover.active{
+    opacity: 40%;
+    pointer-events: auto;
+}
+
+
+
 
 .mainButtonPanel{
     position: absolute;
@@ -114,6 +195,7 @@ ul.bookList{
     justify-content: space-around;
     align-items: center;
     background-color: var(--buttonPnlBgColor);
+    z-index: 2;
 }
 
 

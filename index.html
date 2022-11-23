@@ -20,45 +20,73 @@
 
      <div class="display row">
         <!-- <div class="bookImage"></div> -->
-        <div class="bookInfo">
-            <div class="bookName"></div>
-            <div class="authorName"></div>
-            <div class="progress"></div>
-        </div>
+       
      </div>
 
+      
 
+      <h1 class="row">Books to read</h1>
       <ul class="bookList row">
         <li class="book flexB">
             <div class="bookInfo">
                <div class="bookName">Harry Potter</div>
                <div class="authorName">JK Rowling</div>
+               <div class="noOfPages">213</div>
             </div>
 
-            <div class="interactSection">
-                <a href="#" class="deleteBook">DEL</a>
-                <a href="#" class="tickToggle">READ</a>
+            <div class="book-buttons">
+                <a href="#" class="deleteBook"></a>
+                <div class="readToggle">
+                  <input type="checkbox" name="read" id="read">
+                 <label for="read">Read</label>
+                 </div>
             </div>
         </li>
         <li class="book flexB">
             <div class="bookInfo">
                 <div class="bookName">Ben 10</div>
                 <div class="authorName">Man of Action</div>
+                <div class="noOfPages">213</div>
              </div>
  
-             <div class="interactSection">
-                 <a href="#" class="deleteBook">DEL</a>
-                 <a href="#" class="tickToggle">READ</a>
+             <div class="book-buttons">
+                 <a href="#" class="deleteBook"></a>
+                 <div class="readToggle">
+                  <input type="checkbox" name="read" id="read">
+                 <label for="read">Read</label>
+                 </div>
              </div>
         </li>
       </ul>
+      
+      <form action="#" class="addBookModal p2-1" data-addbookForm>
+        <div class="closeBtn" role="button">
+          <a href="#" data-closeBtn><img src="images\close.svg" alt="close"></a>
+        </div>
+        <div class="formInputs  flexB">
+          <label for="title">Title</label>
+          <input type="text" name="title" id="title" data-modalInputs="title" required>
+          
+          <label for="author">Author</label>
+          <input type="text" name="author" id="author" data-modalInputs="author" required>
+
+          <label for="pages">No of Pages</label>
+          <input type="number" name="pages" id="pages" data-modalInputs="pages" required>
+  
+          <label for="readbookCB">Have you read the book?</label>
+          <input type="checkbox" name="readbookCB" id="readbookCB">
+          <button type="submit" data-addBookBtn>Add Book</button>
+        </div>
+      </form>
+
+      <div class="transparentCover" data-blackCover></div>
 
 
       <div class="mainButtonPanel flexB row">
-        <a href="#"><img class="btnImg" src="images\plus-circle.svg" alt=""></a>
-        <a href="#"><img class="btnImg" src="images\grid.svg" alt=""></a>
-        <a href="#"><img class="btnImg" src="images\moon.svg" alt=""></a>
-        <a href="#"><img class="btnImg" src="images\info.svg" alt=""></a>
+        <a href="#" data-addBookModalBtn><img class="btnImg" src="images\plus-circle.svg" alt=""></a>
+        <a href="#" data-listGridView><img class="btnImg" src="images\grid.svg" alt=""></a>
+        <a href="#" data-themeSwitcher><img class="btnImg" src="images\moon.svg" alt=""></a>
+        <a href="#" data-about><img class="btnImg" src="images\info.svg" alt=""></a>
       </div>
    </div> 
 </body>
