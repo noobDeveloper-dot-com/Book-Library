@@ -54,9 +54,8 @@ img{
     position: relative;
     background-color: var(--interFaceColor);
     border-radius: var(--bRadius);
-    width: 80%;
-    max-width: 300px;
-    aspect-ratio: 1/2;
+    width: min(80%, 350px);
+    aspect-ratio: 2;
     
 }
 
@@ -88,8 +87,10 @@ img{
 
 ul.bookList{
     background-color:var(--bookListBgColor);
-    min-height: 12rem;
+    height: 11rem;
     border-radius: var(--bRadius);
+    overflow-y: scroll;
+
 }
 
 .book{
@@ -189,7 +190,7 @@ ul.bookList{
 
 .mainButtonPanel{
     position: absolute;
-    inset: auto 0 0 0;
+    inset: auto 0 -3.5rem 0;
     border-radius: var(--bRadius);
     aspect-ratio: 4;
     justify-content: space-around;
