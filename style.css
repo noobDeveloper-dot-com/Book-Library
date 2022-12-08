@@ -55,7 +55,7 @@ img{
     background-color: var(--interFaceColor);
     border-radius: var(--bRadius);
     width: min(80%, 350px);
-    aspect-ratio: 2;
+    /* aspect-ratio: 2; */
     
 }
 
@@ -110,13 +110,27 @@ ul.bookList{
     width: 70%;
 }
 
+/*Delete Button in BookList*/
 .deleteBook{
     background-image: url("images/Trash.svg");
 }
 
-.formInputs .readToggle{
+
+/*Read Button in BookList*/
+.readBtn{
     text-align: center;
-    background-color: greenyellow;
+    background-color: rgb(255, 75, 47);
+    color: #fff;
+    border-radius: var(--bRadius);
+    padding: .5em;
+    border: none;
+    transition: 300ms;
+    cursor: pointer;
+}
+
+
+.readBtn.read{
+    background-color: rgb(87, 221, 87);
 }
 
 .deleteBook,
