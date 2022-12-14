@@ -4,7 +4,8 @@ let myLibrary = [];
 
 // the constructor
 
-function Book(titleVal, authorVal, pagesVal) {
+function Book(bookID, titleVal, authorVal, pagesVal) {
+  this.bookID = bookID;
   this.title = titleVal;
   this.author = authorVal;
   this.pages = pagesVal;
@@ -52,6 +53,8 @@ function addBookToLibrary(newBookObj) {
   log(myLibrary, myLibrary.length);
 }
 
+let bookId = 0; //book id for each bookObj
+
 function modalInputs() {
   //This function takes each input values and initialize to the variable.
 
@@ -60,13 +63,14 @@ function modalInputs() {
     noOfPagesVal = document.querySelector("#pages").value;
   readCB = document.querySelector("#readbookCB").checked;
 
-  let newBook = new Book(titleVal, authorVal, noOfPagesVal); //Afterwards it passes the variables to the Book constructor to create a new book obj.
+  let newBook = new Book(bookId, titleVal, authorVal, noOfPagesVal); //Afterwards it passes the variables to the Book constructor to create a new book obj.
+
   newBook.readStatus(readCB);
   addBookToLibrary(newBook); //Passes the new book obj to addBookToLibrary function
-  elements(newBook);
+  elements(newBook, bookId);
 }
 
-function elements(newBook) {
+function elements(newBook, bookID) {
   //create Elements
 
   const book = document.createElement("li"); //Grand Parent Container
@@ -95,7 +99,7 @@ function elements(newBook) {
   readBtn.classList.add("readBtn");
 
   //Add Attributes
-
+  book.setAttribute("data-bookID", bookID);
   deleteBook.setAttribute("href", "#");
 
   //Append to document
@@ -141,6 +145,7 @@ function addBook(ev) {
   ev.preventDefault(); //Disables the default event. Submit button has a default event of submitting data and reloading the page.
 
   modalInputs();
+  bookId++; //increase the value of bookID
 
   addBookModal.reset(); // Resets the modal Values in the textbox
 }
@@ -151,7 +156,15 @@ function readAndDeleteToggle(ev) {
   // Deletes book
   if (ev.target.className === "deleteBook") {
     let li = ev.target.parentElement.parentElement;
+
+    myLibrary.forEach((e, i) => {
+      if (e.bookID === Number(li.dataset.bookid)) {
+        myLibrary.splice(i, 1); //remove bookObj from array
+      }
+    });
+
     bookList.removeChild(li);
+    // console.log("🚀 ~ readAndDeleteToggle ~ li", li.dataset.bookid);
   }
   // Toggles for Read Button
 
